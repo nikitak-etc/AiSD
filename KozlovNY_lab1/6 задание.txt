@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+long double fact(int N)
+{
+	if (N < 0) 
+		return 0; 
+	if (N == 0) 
+		return 1; 
+	else 
+		return N * fact(N - 1); //O(N)
+}
+
+int main()
+{
+	int N;
+	cin >> N;
+	cout << fact(N) << endl;
+	return 0;
+}
+
+
+
+..........................................................................
+#include <iostream>
+using namespace std;
+
+long double fact(int N){
+	long int RES = 1;
+	if (N <= 0)
+		return 0;
+	else
+		for (int i = 2; i <= N; i++)             //O(N-1)
+			RES *= i;
+	return RES;
+}
+
+int main()
+{
+	int N;
+	cin >> N;
+	cout<<fact(N);
+	return 0;
+}
